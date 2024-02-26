@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 section{
     width: 100%;
     height: 100vh;
@@ -591,4 +595,23 @@ footer .end{
 footer .end span{
     color: #089da1;
     margin-left: 10px;
+}
+
+#genres-dropdown {
+    position: relative;
+}
+
+#genres-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #ccc;
+}
+
+#genres-menu li {
+    margin-bottom: 5px;
 }
