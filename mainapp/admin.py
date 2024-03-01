@@ -24,6 +24,14 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'status', 'total_amount', 'creation_date', 'update_date')
     list_filter = ('status',)
     search_fields = ('user__username',)
+    fieldsets = (
+        ("Тапсырыс туралы", {
+            'fields': ('id', 'user', 'status', 'total_amount')
+        }),
+        ('Date', {
+            'fields': ('creation_date', 'update_date')
+        }),
+    )
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
