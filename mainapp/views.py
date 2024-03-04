@@ -26,7 +26,11 @@ def homepage(request):
 
 
 def fiction(request):
-    return render(request, "fiction.html")
+    title = 'Fiction'
+    with open('D:\\\\pythonProject2\\\\pythonProject2\\\\mainapp\\\\templates\\\\fiction.txt', 'r') as ff:
+        f_data = ff.read()
+    context = {'title': title, 'from_file': f_data}
+    return render(request, "fiction.html", context)
 
 def children(request):
     return render(request, "children.html")
