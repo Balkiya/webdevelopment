@@ -76,6 +76,37 @@
         <li>Қолдау қызметі</li>
     </ul>
 </div>
+<div class="container">
+    <h2>Books list</h2>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Publisher</th>
+                <th>Price</th>
+                <th>Genre</th>
+                <th>Cover</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.description }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.genre }}</td>
+                <td><img src="{{ book.cover }}" alt="Book Cover"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
 
 </body>
 </html>

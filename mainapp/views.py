@@ -1,6 +1,13 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Book
 
+def project(request):
+    books = Book.objects.all()
+    title = 'Books list'
+    data={'title':title, 'books': books}
 
+    return render(request, 'project.html', context=data)
 def promotions(request):
     return render(request, "promotions.html")
 
@@ -60,6 +67,4 @@ def members(request):
     return render(request, "members.html")
 
 
-def project(request):
-    return render(request, "project.html")
 
