@@ -58,7 +58,25 @@
         <p>Role: Developer, Designer</p>
         <p>040408650645</p>
     </div>
+<ul>
+        {% for member in team_members %}
+            <li>
+                <h2>{{ member.0 }}</h2>
+                <p><strong>Role:</strong> {{ member.1 }}</p>
+                <p><strong>ЖСН:</strong> {{ member.2 }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 
+    <ul>
+        {% for name, info in mem_dict.items %}
+            <li>
+                <h2>{{ name }}</h2>
+                <p><strong>Жасы:</strong> {{ info.position }}</p>
+                <p><strong>Туған жері:</strong> {{ info.bio }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 
 </div>
 
