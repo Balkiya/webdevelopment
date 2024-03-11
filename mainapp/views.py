@@ -5,10 +5,10 @@ from django.views.generic import ListView
 
 
 def fiction(request):
-    books = Book.objects.all()
+    genre = "художственная литература"
+    books = Book.objects.filter(genre=genre)
     title = 'Books list'
-    data = {'title': title, 'books': books}
-
+    data = {'title': title, 'books': books, 'genre': genre}
     return render(request, 'fiction.html', context=data)
 
 
@@ -17,23 +17,9 @@ def basket(request):
     return render(request, "basket.html", {'baskets': baskets})
 
 
-def bookins(request):
-    title = 'Кітаптар саны'
-    book_ins = BookInstance.objects.all()
-    data = {'title' : title, 'book_ins': book_ins}
-
-    return render(request, 'bookinstance.html', context=data)
-
-
-class BookInstanceListView(ListView):
+class BookInstance(ListView):
     model = BookInstance
-    template_name = 'bookinstance_list.html'
-    context_object_name = 'bookinstances'
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        import pdb; pdb.set_trace()  # Поставьте эту строку перед return
-        return queryset
+    template_name = 'bookinstance.html'
 
 
 def order_list(request):
@@ -67,27 +53,51 @@ def homepage(request):
 
 
 def children(request):
-    return render(request, "children.html")
+    genre = "детская литература"
+    books = Book.objects.filter(genre=genre)
+    title = 'Books list'
+    data = {'title': title, 'books': books, 'genre': genre}
+    return render(request, 'children.html', context=data)
 
 
 def phyco(request):
-    return render(request, "phyco.html")
+    genre = "психология"
+    books = Book.objects.filter(genre=genre)
+    title = 'Books list'
+    data = {'title': title, 'books': books, 'genre': genre}
+    return render(request, "phyco.html", context=data)
 
 
 def lang(request):
-    return render(request, "lang.html")
+    genre = "изучение языков"
+    books = Book.objects.filter(genre=genre)
+    title = 'Books list'
+    data = {'title': title, 'books': books, 'genre': genre}
+    return render(request, "lang.html", context=data)
 
 
 def business(request):
-    return render(request, "business.html")
+    genre = "бизнес"
+    books = Book.objects.filter(genre=genre)
+    title = 'Books list'
+    data = {'title': title, 'books': books, 'genre': genre}
+    return render(request, "business.html", context=data)
 
 
 def graphic(request):
-    return render(request, "graphic.html")
+    genre = "графическая литература"
+    books = Book.objects.filter(genre=genre)
+    title = 'Books list'
+    data = {'title': title, 'books': books, 'genre': genre}
+    return render(request, "graphic.html", context=data)
 
 
 def internet(request):
-    return render(request, "internet.html")
+    genre = "компьютер"
+    books = Book.objects.filter(genre=genre)
+    title = 'Books list'
+    data = {'title': title, 'books': books, 'genre': genre}
+    return render(request, "internet.html", context=data)
 
 
 def members(request):

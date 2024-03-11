@@ -1,86 +1,47 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>{{ title }}</title>-->
-<!--    <style>-->
-<!--        body {-->
-<!--            font-family: Arial, sans-serif;-->
-<!--            margin: 0;-->
-<!--            padding: 0;-->
-<!--            background-color: #f4f4f4;-->
-<!--        }-->
-<!--        .container {-->
-<!--            max-width: 800px;-->
-<!--            margin: 20px auto;-->
-<!--            padding: 20px;-->
-<!--            background-color: #ffffff;-->
-<!--            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);-->
-<!--        }-->
-<!--        h2 {-->
-<!--            text-align: center;-->
-<!--        }-->
-<!--        table {-->
-<!--            width: 100%;-->
-<!--            border-collapse: collapse;-->
-<!--            margin-top: 20px;-->
-<!--        }-->
-<!--        th, td {-->
-<!--            border: 1px solid #dddddd;-->
-<!--            text-align: left;-->
-<!--            padding: 8px;-->
-<!--        }-->
-<!--        th {-->
-<!--            background-color: #f2f2f2;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="container">-->
-<!--    <h2>{{ title }}</h2>-->
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>Title</th>-->
-<!--                <th>Status</th>-->
-<!--                <th>Acquisition Date</th>-->
-<!--                <th>Last Updated Date</th>-->
-<!--                <th>Order Link</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--            {% for book_instance in book_ins %}-->
-<!--            <tr>-->
-<!--                <td>{{ book_instance.book.title }}</td>-->
-<!--                <td>{{ book_instance.status }}</td>-->
-<!--                <td>{{ book_instance.acquisition_date }}</td>-->
-<!--                <td>{{ book_instance.last_updated_date }}</td>-->
-<!--                <td>{{ book_instance.order_link }}</td>-->
-<!--            </tr>-->
-<!--            {% endfor %}-->
-<!--        </tbody>-->
-<!--    </table>-->
-<!--</div>-->
-
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Instances</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <h1>Book Instances</h1>
-    <ul>
-        {% for book_instance in bookinstances %}
-            <li>{{ book_instance.book.title }} - {{ book_instance.status }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Acquisition Date</th>
+                <th>Last Updated Date</th>
+                <th>Order Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book_instance in object_list %}
+                <tr>
+                    <td>{{ book_instance.book.title }}</td>
+                    <td>{{ book_instance.status }}</td>
+                    <td>{{ book_instance.acquisition_date }}</td>
+                    <td>{{ book_instance.last_updated_date }}</td>
+                    <td>{{ book_instance.order_link }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
-
-

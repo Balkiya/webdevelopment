@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import promotions, deliveries, contacts, signup, basket, homepage, fiction, children, phyco, graphic, lang, \
-    business, internet, members, project, order_list, bookins, feedback, BookInstanceListView
+    business, internet, members, project, order_list, feedback, BookInstance
 
 urlpatterns = [
     path('promotions/', promotions),
@@ -8,19 +8,18 @@ urlpatterns = [
     path('contacts/', contacts),
     path('homepage/signup.html', signup),
     path('homepage/feedback.html', feedback),
-    path('homepage/bookinstance.html', bookins),
-    path('homepage/bookinstances/', BookInstanceListView.as_view(), name='bookinstance-list'),
+    path('homepage/bookinstance.html/', BookInstance.as_view(), name='bookinstance_list'),
     path('homepage/order.html', order_list),
     path('homepage/basket.html', basket),
     path('homepage/', homepage),
     path('fiction/', fiction),
     path('homepage/templates/fiction.html', fiction, name='fiction'),
-    path('children/', children),
-    path('phyco/', phyco),
-    path('graphic/', graphic),
-    path('lang/', lang),
-    path('business/', business),
-    path('internet/', internet),
+    path('homepage/children.html/', children),
+    path('homepage/phyco.html/', phyco),
+    path('homepage/graphic.html/', graphic),
+    path('homepage/lang.html/', lang),
+    path('homepage/business.html/', business),
+    path('homepage/internet.html/', internet),
     path('members/',members),
     path('project/', project)
 ]
