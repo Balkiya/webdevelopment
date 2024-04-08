@@ -117,3 +117,9 @@ def members(request):
 
 def project(request):
     return render(request, 'project.html')
+
+def base(request):
+    return render(request, "base.html")
+
+def about(request):
+    return render(request, "about.html")

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import promotions, deliveries, contacts, signup, basket, homepage, fiction, children, phyco, graphic, lang, \
+from .views import promotions, deliveries, contacts, signup, basket, homepage, fiction, children, phyco, graphic, base, about, lang, \
     business, internet, members, project, order_list, feedback, BookInstance
 
 urlpatterns = [
@@ -21,5 +21,7 @@ urlpatterns = [
     path('homepage/business.html/', business),
     path('homepage/internet.html/', internet),
     path('members/',members),
-    path('project/', project)
+    path('project/', project),
+    path('base/', base),
+    path('about/', about),
 ]

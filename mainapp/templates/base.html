@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Website</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section>
+        {% block header %}
+        <nav>
+            <div class="logo">
+                <img src="{% static 'main/img/logo.png' %}">
+            </div>
+
+            <ul>
+                <li><a href="#home">Басты бет</a></li>
+                <li><a href="#about">Біз туралы</a></li>
+                <li><a href="#featured">Таңдаулы кітаптар</a></li>
+                <li><a href="#arrivals">Жаңа түсірілімдер</a></li>
+                <li><a href="signup.html">Регистрация</a></li>
+                <li id="genres-dropdown">
+                <a href="#">Каталог</a>
+                <ul id="genres-menu">
+                    <li><a href="templates/fiction.html">Көркем әдебиет</a></li>
+                    <li><a href="children.html">Балалар әдебиеті</a></li>
+                    <li><a href="phyco.html">Психологиялық әдебиет</a></li>
+                    <li><a href="lang.html">Тіл үйрену</a></li>
+                    <li><a href="business.html">Іскерлік кітаптар</a></li>
+                    <li><a href="graphic.html">Графикалық әдебиет</a></li>
+                    <li><a href="internet.html">Ғаламтор, компьютерлер</a></li>
+
+                </ul>
+                <li><a href="order.html">Тапсырыс</a></li>
+            </li>
+            </ul>
+
+            <div class="social_icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+                <a href="basket.html"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+
+            <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const genresDropdown = document.getElementById('genres-dropdown');
+        const genresMenu = document.getElementById('genres-menu');
+
+        genresDropdown.addEventListener('mouseenter', function() {
+            genresMenu.style.display = 'block';
+        });
+
+        genresDropdown.addEventListener('mouseleave', function() {
+            genresMenu.style.display = 'none';
+        });
+    });
+</script>
+        </nav>
+        {% endblock header %}
+    {% block content %}
+        <div class="main">
+            <div class="main_tag">
+                <h1><span>КІТАП ДҮКЕНІНЕ</span><br>ҚОШ КЕЛДІҢІЗ</h1>
+                <p>
+                    Біз сізді кітап дүкенінде көруге қуаныштымыз! Бізде сіз кез-келген талғамға және қалауға арналған кітаптардың кең таңдауын таба аласыз.
+                </p>
+                <a href="bookinstance.html" class="main_btn">Кітаптарға өту</a>
+            </div>
+            <div class="main_img">
+                <img src="{% static 'main/img/table.png' %}">
+            </div>
+        </div>
+    {% endblock content %}
+    </section>
+    
+    {% block footer %}
+    <footer>
+        <div class="footer_main">
+
+            <div class="tag">
+                <h1>Quick Link</h1>
+                <a href="#home">Басты бет</a>
+                <a href="#about">Біз туралы</a>
+                <a href="#featured">Таңдаулы кітаптар</a>
+                <a href="#arrivals">Жаңа түсірілімдер</a>
+
+            </div>
+
+            <div class="tag">
+                <h1>Байланыс</h1>
+                <a href="#"><i class="fa-solid fa-phone"></i>+7 (771) 610 34 54</a>
+                <a href="#"><i class="fa-solid fa-phone"></i>+7 (707) 901 80 70</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i>bookstore123@gmail.com</a>
+
+            </div>
+
+            <div class="tag">
+                <h1>Бізге жазылыңыздар</h1>
+                <div class="social_link">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+
+            </div>
+            
+        </div>
+    </footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
+    {% endblock footer %}
+</body>
+</html>

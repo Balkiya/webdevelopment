@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,6 +40,14 @@
             max-width: 100px;
             height: auto;
         }
+        footer {
+            background-color: #eaeaea;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -47,13 +57,13 @@
     <table>
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Description</th>
-                <th>Publisher</th>
-                <th>Price</th>
-                <th>Genre</th>
-                <th>Cover</th>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Описание</th>
+                <th>Издатель</th>
+                <th>Цена</th>
+                <th>Жанр</th>
+                <th>Обложка</th>
             </tr>
         </thead>
         <tbody>
@@ -65,12 +75,13 @@
                 <td>{{ book.publisher }}</td>
                 <td>{{ book.price }}</td>
                 <td>{{ book.genre }}</td>
-                <td><img src="{{ book.cover }}" alt="Book Cover"></td>
+                <td><img src="{{ book.cover }}" alt="Обложка книги"></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
-
 </body>
 </html>
+{% endblock content %}
+
