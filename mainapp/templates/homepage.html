@@ -34,14 +34,14 @@
                     <li><a href="{% url 'internet' %}">Ғаламтор, компьютерлер</a></li>
 
                 </ul>
-                <li><a href="order.html">Тапсырыс</a></li>
+                <li><a href="{% url 'order' %}">Тапсырыс</a></li>
             </li>
             </ul>
 
             <div class="social_icon">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-heart"></i>
-                <a href="basket.html"><i class="fa-solid fa-shopping-cart"></i></a>
+                <a href="{% url 'basket' %}"><i class="fa-solid fa-shopping-cart"></i></a>
             </div>
 
             <script>
@@ -65,7 +65,7 @@
                 <p>
                     Біз сізді кітап дүкенінде көруге қуаныштымыз! Бізде сіз кез-келген талғамға және қалауға арналған кітаптардың кең таңдауын таба аласыз.
                 </p>
-                <a href="bookinstance.html" class="main_btn">Кітаптарға өту</a>
+                <a href="{% url 'bookinstance_list' %}" class="main_btn">Кітаптарға өту</a>
             </div>
             <div class="main_img">
                 <img src="{% static 'main/img/table.png' %}">
@@ -134,7 +134,7 @@
 Біздің команда сізге оқуға тамаша кітапты табуға көмектесуге дайын нағыз кітапқұмарлардан тұрады. Біз әрбір келуші әдебиет әлемінен ләззат алатын және жаңа және қызықты нәрсені таба алатын жайлы атмосфераны құруға тырысамыз.
 
 Біздің дүкенге барғаныңыз үшін рахмет және сізді шабыттандыратын және жарқын әсер қалдыратын кітапты осы жерден табасыз деп үміттенеміз!            </p>
-            <a href="feedback.html" class="about_btn">Пікірлер</a>
+            <a href="{% url 'feedback' %}" class="about_btn">Пікірлер</a>
         </div>
     </div>
 </section>
@@ -161,7 +161,7 @@
                     <p class="writer">Синсеро Дж.</p>
                     <div class="categories">Психология</div>
                     <p class="book_price">2,500₸<sub><del>3,000₸</del></sub></p>
-                    <a href="nizia.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "nizia" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -177,7 +177,7 @@
                     <p class="writer">Ильяхов М., Тиньков О.</p>
                     <div class="categories">Бизнес</div>
                     <p class="book_price">2,300₸<sub><del>2,500₸</del></sub></p>
-                    <a href="biznesbezmba.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "biznesbezmba" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -193,7 +193,7 @@
                     <p class="writer">Джандарбеков Б.</p>
                     <div class="categories">Көркем әдебиет, Тарих</div>
                     <p class="book_price">4,900₸<sub><del>5,500₸</del></sub></p>
-                    <a href="tomiris.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "tomiris" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -209,7 +209,7 @@
                     <p class="writer">Капаноглу С.</p>
                     <div class="categories">Компьютер, ғаламтор</div>
                     <p class="book_price">9,500₸<sub><del>11,000₸</del></sub></p>
-                    <a href="kodersulisy.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "kodersulisy" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -225,7 +225,7 @@
                     <p class="writer">Акутами Г.</p>
                     <div class="categories">Графикалық әдебиет, Манхва</div>
                     <p class="book_price">5,300₸<sub><del>6,000₸</del></sub></p>
-                    <a href="magicheskaya.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "magicheskaya" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -241,7 +241,7 @@
                     <p class="writer">Кисимото М.</p>
                     <div class="categories">Графикалық әдебиет, Манхва</div>
                     <p class="book_price">4,800₸<sub><del>6,000₸</del></sub></p>
-                    <a href="naruto.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "naruto" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -258,7 +258,7 @@
                     <p class="writer">Моррис Х.</p>
                     <div class="categories">Көркем әдебиет</div>
                     <p class="book_price">6,000₸<sub><del>6,700₸</del></sub></p>
-                    <a href="threesis.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "threesis" %}" class="f_btn">Көбірек білу</a>
                 </div>               
 
             </div>
@@ -275,7 +275,7 @@
                     <p class="writer">Чун Ин Сун, Погадаева А.</p>
                     <div class="categories">Тіл үйрену, Балалар әдебиеті</div>
                     <p class="book_price">4,000₸<sub><del>4,800₸</del></sub></p>
-                    <a href="samyelu.html" class="f_btn">Көбірек білу</a>
+                    <a href="{% url "samyelu" %}" class="f_btn">Көбірек білу</a>
                 </div>
             </div>
         </div>
@@ -304,7 +304,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="c++.html" class="arrivals_btn">Көбірек білу</a>
+                    <a href="{% url "c" %}" class="arrivals_btn">Көбірек білу</a>
                 </div>
             </div>
 
@@ -321,7 +321,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="tonkoe.html" class="arrivals_btn">Көбірек білу</a>
+                    <a href="{% url "tonkoe" %}" class="arrivals_btn">Көбірек білу</a>
                 </div>
             </div>
 
@@ -338,7 +338,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="voina.html" class="arrivals_btn">Көбірек білу</a>
+                    <a href="{% url "voina" %}" class="arrivals_btn">Көбірек білу</a>
                 </div>
             </div>
 
@@ -355,7 +355,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="kingcat.html" class="arrivals_btn">Көбірек білу</a>
+                    <a href="{% url "kingcat" %}" class="arrivals_btn">Көбірек білу</a>
                 </div>
             </div>
 
@@ -372,7 +372,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="english.html" class="arrivals_btn">Көбірек білу</a>
+                    <a href="{% url "english" %}" class="arrivals_btn">Көбірек білу</a>
                 </div>
             </div>
         </div>
@@ -388,10 +388,10 @@
 
             <div class="tag">
                 <h1>Quick Link</h1>
-                <a href="base.html">Басты бет</a>
-                <a href="about.html">Біз туралы</a>
-                <a href="featured.html">Таңдаулы кітаптар</a>
-                <a href="arrivals.html">Жаңа түсірілімдер</a>
+                <a href="{% url 'homepage' %}">Басты бет</a>
+                <a href="{% url 'about' %}">Біз туралы</a>
+                <a href="{% url 'featured' %}">Таңдаулы кітаптар</a>
+                <a href="{% url 'arrivals' %}">Жаңа түсірілімдер</a>
 
             </div>
 

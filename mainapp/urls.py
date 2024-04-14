@@ -1,21 +1,21 @@
 from django.urls import path
 from .views import promotions, deliveries, contacts, signup, basket, homepage, fiction, children, phyco, graphic, base, about, lang, \
-    business, internet, members, project, order_list, feedback, arrivals, featured, BookInstance
+    business, internet, members, project, order_list, feedback, arrivals, featured, BookInstance, nizia, biznesbezmba, tomiris, kodersulisy, \
+    magicheskaya, naruto, threesis, samyelu, c, tonkoe, voina, kingcat, english
 
 urlpatterns = [
     path('promotions/', promotions, name='promotions'),
     path('deliveries/', deliveries, name='deliveries'),
     path('contacts/', contacts, name='contacts'),
-    path('homepage/signup.html', signup, name='signup'),
-    path('homepage/feedback.html', feedback, name='feedback'),
-    path('homepage/bookinstance.html/', BookInstance.as_view(), name='bookinstance_list'),
-    path('homepage/order.html', order_list, name='order'),
-    path('homepage/basket.html', basket, name='basket'),
-    path('homepage/', homepage),
-    path('fiction/', fiction),
-    path('homepage/templates/fiction.html', fiction, name='fiction'),
-    path('homepage/children.html/', children, name='children'),
-    path('homepage/phyco.html/', phyco, name='phyco'),
+    path('signup/', signup, name='signup'),
+    path('feedback/', feedback, name='feedback'),
+    path('bookinstance/', BookInstance.as_view(), name='bookinstance_list'),
+    path('order/', order_list, name='order'),
+    path('basket/', basket, name='basket'),
+    path('homepage/', homepage, name='homepage'),
+    path('fiction/', fiction, name='fiction'),
+    path('children/', children, name='children'),
+    path('phyco/', phyco, name='phyco'),
     path('graphic/', graphic, name='graphic'),
     path('lang/', lang, name='lang'),
     path('business/', business, name='business'),
@@ -26,4 +26,19 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('arrivals/', arrivals, name='arrivals'),
     path('featured/', featured, name='featured'),
+    path('nizia/', nizia, name='nizia'),
+    path('biznesbezmba/', biznesbezmba, name='biznesbezmba'),
+    path('tomiris/', tomiris, name='tomiris'),
+    path('kodersulisy/', kodersulisy, name='kodersulisy'),
+    path('magicheskaya/', magicheskaya, name='magicheskaya'),
+    path('naruto/', naruto, name='naruto'),
+    path('threesis/', threesis, name='threesis'),
+    path('samyelu/', samyelu, name='samyelu'),
+    path('c/', c, name='c'),
+    path('tonkoe/', tonkoe, name='tonkoe'),
+    path('voina/', voina, name='voina'),
+    path('tonkoe/', tonkoe, name='tonkoe'),
+    path('english/', english, name='english'),
+    path('kingcat/', kingcat, name='kingcat'),
+    path('kingcat/', kingcat, name='kingcat'),
 ]

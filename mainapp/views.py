@@ -129,3 +129,51 @@ def arrivals(request):
 
 def featured(request):
     return render(request, "featured.html")
+
+def nizia(request):
+    return render(request, "nizia.html")
+
+def biznesbezmba(request):
+    return render(request, "biznesbezmba.html")
+
+def tomiris(request):
+    return render(request, "tomiris.html")
+
+def kodersulisy(request):
+    return render(request, "kodersulisy.html")
+
+def magicheskaya(request):
+    return render(request, "magicheskaya.html")
+
+def naruto(request):
+    return render(request, "naruto.html")
+
+def threesis(request):
+    return render(request, "threesis.html")
+
+def samyelu(request):
+    return render(request, "samyelu.html")
+
+def c(request):
+    return render(request, "c.html")
+
+def tonkoe(request):
+    return render(request, "tonkoe.html")
+
+def voina(request):
+    return render(request, "voina.html")
+
+def kingcat(request):
+    return render(request, "kingcat.html")
+
+def english(request):
+    return render(request, "english.html")
+
+def kingcat(request):
+    return render(request, "kingcat.html")
+
+def kingcat(request):
+    return render(request, "kingcat.html")
+
+def kingcat(request):
+    return render(request, "kingcat.html")

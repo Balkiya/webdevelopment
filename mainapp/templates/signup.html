@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Регистрация</title>
-</head>
-<body>
-<form>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+    <section id="signup">
   <h1>Welcome Back</h1>
   <p>Жалғастыру үшін деректеріңізді енгізіңіз.</p>
 
@@ -129,5 +126,5 @@ form {
 }
 
 </style>
-</body>
-</html>
+    </section>
+{% endblock content %}
