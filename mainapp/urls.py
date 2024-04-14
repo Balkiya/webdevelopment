@@ -40,5 +40,4 @@ urlpatterns = [
     path('tonkoe/', tonkoe, name='tonkoe'),
     path('english/', english, name='english'),
     path('kingcat/', kingcat, name='kingcat'),
-    path('kingcat/', kingcat, name='kingcat'),
 ]

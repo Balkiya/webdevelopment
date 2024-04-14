@@ -17,7 +17,7 @@
             </div>
 
             <ul>
-                <li><a href="{% url 'base' %}">Басты бет</a></li>
+                <li><a href="{% url 'homepage' %}">Басты бет</a></li>
                 <li><a href="{% url 'about' %}">Біз туралы</a></li>
                 <li><a href="{% url 'featured' %}">Таңдаулы кітаптар</a></li>
                 <li><a href="{% url 'arrivals' %}">Жаңа түсірілімдер</a></li>
@@ -25,7 +25,7 @@
                 <li id="genres-dropdown">
                 <a href="#">Каталог</a>
                 <ul id="genres-menu">
-                    <li><a href="templates/fiction.html">Көркем әдебиет</a></li>
+                    <li><a href="{% url 'fiction' %}">Көркем әдебиет</a></li>
                     <li><a href="{% url 'children' %}">Балалар әдебиеті</a></li>
                     <li><a href="{% url 'phyco' %}">Психологиялық әдебиет</a></li>
                     <li><a href="{% url 'lang' %}">Тіл үйрену</a></li>
