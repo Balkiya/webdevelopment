@@ -123,3 +123,9 @@ def base(request):
 
 def about(request):
     return render(request, "about.html")
+
+def arrivals(request):
+    return render(request, "arrivals.html")
+
+def featured(request):
+    return render(request, "featured.html")

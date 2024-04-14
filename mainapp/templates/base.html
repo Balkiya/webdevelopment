@@ -18,11 +18,11 @@
             </div>
 
             <ul>
-                <li><a href="#home">Басты бет</a></li>
-                <li><a href="#about">Біз туралы</a></li>
-                <li><a href="#featured">Таңдаулы кітаптар</a></li>
-                <li><a href="#arrivals">Жаңа түсірілімдер</a></li>
-                <li><a href="signup.html">Регистрация</a></li>
+                <li><a href="/">Басты бет</a></li>
+                <li><a href="{% url 'about' %}">Біз туралы</a></li>
+                <li><a href="{% url 'featured' %}">Таңдаулы кітаптар</a></li>
+                <li><a href="{% url 'arrivals' %}">Жаңа түсірілімдер</a></li>
+                <li><a href="{% url 'signup' %}">Регистрация</a></li>
                 <li id="genres-dropdown">
                 <a href="#">Каталог</a>
                 <ul id="genres-menu">
@@ -30,7 +30,7 @@
                     <li><a href="children.html">Балалар әдебиеті</a></li>
                     <li><a href="phyco.html">Психологиялық әдебиет</a></li>
                     <li><a href="lang.html">Тіл үйрену</a></li>
-                    <li><a href="business.html">Іскерлік кітаптар</a></li>
+                    <li><a href="business.html/">Іскерлік кітаптар</a></li>
                     <li><a href="graphic.html">Графикалық әдебиет</a></li>
                     <li><a href="internet.html">Ғаламтор, компьютерлер</a></li>
 
@@ -62,22 +62,9 @@
         </nav>
         {% endblock header %}
     {% block content %}
-        <div class="main">
-            <div class="main_tag">
-                <h1><span>КІТАП ДҮКЕНІНЕ</span><br>ҚОШ КЕЛДІҢІЗ</h1>
-                <p>
-                    Біз сізді кітап дүкенінде көруге қуаныштымыз! Бізде сіз кез-келген талғамға және қалауға арналған кітаптардың кең таңдауын таба аласыз.
-                </p>
-                <a href="bookinstance.html" class="main_btn">Кітаптарға өту</a>
-            </div>
-            <div class="main_img">
-                <img src="{% static 'main/img/table.png' %}">
-            </div>
-        </div>
+        
     {% endblock content %}
-    </section>
-    
-    {% block footer %}
+        {% block footer %}
     <footer>
         <div class="footer_main">
 
@@ -111,6 +98,9 @@
             
         </div>
     </footer>
+    {% endblock footer %}
+    </section>
+    
 
 
 <script>
@@ -129,6 +119,6 @@
         });
     });
 </script>
-    {% endblock footer %}
+
 </body>
 </html>

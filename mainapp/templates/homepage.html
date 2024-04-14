@@ -17,21 +17,21 @@
             </div>
 
             <ul>
-                <li><a href="#home">Басты бет</a></li>
-                <li><a href="#about">Біз туралы</a></li>
-                <li><a href="#featured">Таңдаулы кітаптар</a></li>
-                <li><a href="#arrivals">Жаңа түсірілімдер</a></li>
-                <li><a href="signup.html">Регистрация</a></li>
+                <li><a href="{% url 'base' %}">Басты бет</a></li>
+                <li><a href="{% url 'about' %}">Біз туралы</a></li>
+                <li><a href="{% url 'featured' %}">Таңдаулы кітаптар</a></li>
+                <li><a href="{% url 'arrivals' %}">Жаңа түсірілімдер</a></li>
+                <li><a href="{% url 'signup' %}">Регистрация</a></li>
                 <li id="genres-dropdown">
                 <a href="#">Каталог</a>
                 <ul id="genres-menu">
                     <li><a href="templates/fiction.html">Көркем әдебиет</a></li>
-                    <li><a href="children.html">Балалар әдебиеті</a></li>
-                    <li><a href="phyco.html">Психологиялық әдебиет</a></li>
-                    <li><a href="lang.html">Тіл үйрену</a></li>
-                    <li><a href="business.html">Іскерлік кітаптар</a></li>
-                    <li><a href="graphic.html">Графикалық әдебиет</a></li>
-                    <li><a href="internet.html">Ғаламтор, компьютерлер</a></li>
+                    <li><a href="{% url 'children' %}">Балалар әдебиеті</a></li>
+                    <li><a href="{% url 'phyco' %}">Психологиялық әдебиет</a></li>
+                    <li><a href="{% url 'lang' %}">Тіл үйрену</a></li>
+                    <li><a href="{% url 'business' %}">Іскерлік кітаптар</a></li>
+                    <li><a href="{% url 'graphic' %}">Графикалық әдебиет</a></li>
+                    <li><a href="{% url 'internet' %}">Ғаламтор, компьютерлер</a></li>
 
                 </ul>
                 <li><a href="order.html">Тапсырыс</a></li>
@@ -388,10 +388,10 @@
 
             <div class="tag">
                 <h1>Quick Link</h1>
-                <a href="#home">Басты бет</a>
-                <a href="#about">Біз туралы</a>
-                <a href="#featured">Таңдаулы кітаптар</a>
-                <a href="#arrivals">Жаңа түсірілімдер</a>
+                <a href="base.html">Басты бет</a>
+                <a href="about.html">Біз туралы</a>
+                <a href="featured.html">Таңдаулы кітаптар</a>
+                <a href="arrivals.html">Жаңа түсірілімдер</a>
 
             </div>
 
