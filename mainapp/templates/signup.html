@@ -117,17 +117,18 @@
 
 <div class="container"> <!-- Этот контейнер будет занимать оставшееся пространство между header и footer -->
   <section id="signup">
-    <form>
+    <form method="post" action="postuser/">
+      {% csrf_token %}
       <h1>Қош келдіңіз!</h1>
       <p>Кіру үшін енгізіңіз.</p>
 
       <div class="input-wrapper">
-        <input type="text" placeholder="Логин немесе номер енгізіңіз." />
+        <input type="text" name="text" placeholder="Логин немесе номер енгізіңіз." />
         <i class="bx bxs-user-circle"></i>
       </div>
 
       <div class="input-wrapper">
-        <input type="password" placeholder="Құпиясөзді енгізіңіз." />
+        <input type="password" name="password" placeholder="Құпиясөзді енгізіңіз." />
         <i class="bx bx-key"></i>
       </div>
 

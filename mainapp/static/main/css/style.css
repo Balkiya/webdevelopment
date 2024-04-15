@@ -18,13 +18,14 @@ section{
 }
 
 section nav{
+    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 0 10px #089da1;
     background: #fff;
-    position: fixed;
+
     left: 0;
     z-index: 100;
 }
@@ -69,6 +70,8 @@ section .main{
     justify-content: space-around;
     position: relative;
     top: 10%;
+    margin-top: 70px; /* Отступ сверху для контента */
+    padding-bottom: 50px;
 }
 
 section .main h1{
@@ -111,7 +114,6 @@ section .main .main_img img{
 
 
 
-/*services*/
 
 .services{
     width: 100%;
@@ -149,7 +151,6 @@ section .main .main_img img{
 
 
 
-/*about*/
 
 .about{
     width: 100%;
@@ -279,7 +280,7 @@ section .main .main_img img{
 
 
 
-/*arrivals*/
+
 
 .arrivals{
     width: 100%;

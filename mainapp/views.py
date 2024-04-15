@@ -3,6 +3,24 @@ from django.http import HttpResponse
 from .models import Book, Order, BookInstance, Review, Cart, User
 from django.views.generic import ListView
 
+def postuser(request):
+    text = request.POST.get("text")
+    password = request.POST.get("password")
+    return HttpResponse(f"<h2>Login: {text}  Password: {password}</h2>")
+
+from .forms import UserLoginForm
+
+def login(request):
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            return HttpResponse(f"<h2>Логин: {username}  Пароль: {password}</h2>")
+    else:
+        form = UserLoginForm()
+    return render(request, 'login.html', {'form': form})
+
 
 def fiction(request):
     genre = "художственная литература"
