@@ -1,29 +1,41 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Book, Order, BookInstance, Review, Cart, User
 from django.views.generic import ListView
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import ReviewForm
+from .forms import SignUpForm
+from django.contrib.auth import authenticate, login
+from .forms import LoginForm
 
-def postuser(request):
-    text = request.POST.get("text")
-    password = request.POST.get("password")
-    return HttpResponse(f"<h2>Login: {text}  Password: {password}</h2>")
-
-from .forms import UserLoginForm
-
-def login(request):
+def user_login(request):
     if request.method == 'POST':
-        form = UserLoginForm(request.POST)
+        form = LoginForm(data=request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            return HttpResponse(f"<h2>Логин: {username}  Пароль: {password}</h2>")
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('homepage')  # Перенаправление после успешного входа
     else:
-        form = UserLoginForm()
+        form = LoginForm()
     return render(request, 'login.html', {'form': form})
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('login')  # Перенаправление после успешной регистрации
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'form': form})
+
 
 
 def fiction(request):
-    genre = "художственная литература"
+    genre = "художественная литература"
     books = Book.objects.filter(genre=genre)
     title = 'Books list'
     data = {'title': title, 'books': books, 'genre': genre}
@@ -48,6 +60,33 @@ def feedback(request):
     feedbacks = Review.objects.all()
     return render(request, 'feedback.html', {'feedbacks': feedbacks})
 
+def create_feedback(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('feedback')
+    else:
+        form = ReviewForm()
+    return render(request, 'create_feedback.html', {'form': form})
+
+def update_feedback(request, pk):
+    feedback = get_object_or_404(Review, pk=pk)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=feedback)
+        if form.is_valid():
+            form.save()
+            return redirect('feedback')
+    else:
+        form = ReviewForm(instance=feedback)
+    return render(request, 'update_feedback.html', {'form': form})
+
+def delete_feedback(request, pk):
+    feedback = get_object_or_404(Review, pk=pk)
+    if request.method == 'POST':
+        feedback.delete()
+        return redirect('feedback')
+    return render(request, 'delete_feedback.html', {'feedback': feedback})
 
 def promotions(request):
     return render(request, "promotions.html")
@@ -59,10 +98,6 @@ def deliveries(request):
 
 def contacts(request):
     return render(request, "contacts.html")
-
-
-def signup(request):
-    return render(request, "signup.html")
 
 
 

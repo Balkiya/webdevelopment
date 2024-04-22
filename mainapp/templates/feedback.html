@@ -24,22 +24,20 @@
         }
         .feedback {
             margin-bottom: 20px;
-            border-bottom: 1px solid #dddddd;
-            padding-bottom: 10px;
+            border: 1px solid #dddddd;
+            padding: 10px;
+            border-radius: 10px;
         }
-        .feedback .user {
-            font-weight: bold;
+        .feedback p {
+            margin: 5px 0;
         }
-        .feedback .date {
-            color: #666666;
-            font-size: 0.9em;
+        .feedback a {
+            margin-left: 10px;
         }
-        .feedback .text {
-            margin-top: 5px;
-        }
-        .feedback .book {
-            margin-top: 5px;
-            font-style: italic;
+        .add-feedback-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -48,17 +46,18 @@
     <h2>User Feedback</h2>
     {% for feedback in feedbacks %}
     <div class="feedback">
-        <p class="user">{{ feedback.user.username }}</p>
-        <p class="date">Date: {{ feedback.creation_date }}</p>
-        <p class="text">{{ feedback.review_text }}</p>
-        <p>Rating: {{ feedback.rating }}</p>
-        <p class="book">Book: {{ feedback.book.title }}</p>
+        <p><strong>User:</strong> {{ feedback.user.username }}</p>
+        <p><strong>Date:</strong> {{ feedback.creation_date }}</p>
+        <p><strong>Text:</strong> {{ feedback.review_text }}</p>
+        <p><strong>Rating:</strong> {{ feedback.rating }}</p>
+        <p><strong>Book:</strong> {{ feedback.book.title }}</p>
+        <a href="{% url 'update_feedback' feedback.id %}" class="btn btn-primary">Update</a>
+        <a href="{% url 'delete_feedback' feedback.id %}" class="btn btn-danger">Delete</a>
     </div>
     {% empty %}
     <p>No feedback available</p>
     {% endfor %}
+    <a href="{% url 'create_feedback' %}" class="add-feedback-btn btn btn-success">Add Feedback</a>
 </div>
-
 </body>
-
 {% endblock content %}

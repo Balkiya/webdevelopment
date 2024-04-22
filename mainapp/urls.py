@@ -3,16 +3,18 @@ from django.urls import path, re_path
 from . import views
 from .views import promotions, deliveries, contacts, signup, basket, homepage, fiction, children, phyco, graphic, base, about, lang, \
     business, internet, members, project, order_list, feedback, arrivals, featured, BookInstance, nizia, biznesbezmba, tomiris, kodersulisy, \
-    magicheskaya, naruto, threesis, samyelu, c, tonkoe, voina, kingcat, english, postuser, login
+    magicheskaya, naruto, threesis, samyelu, c, tonkoe, voina, kingcat, english, user_login
 
 urlpatterns = [
-    path('login/', login, name='login'),
+    path ('login/', user_login, name='login'),
     path('promotions/', promotions, name='promotions'),
     path('deliveries/', deliveries, name='deliveries'),
     path('contacts/', contacts, name='contacts'),
     path('signup/', signup, name='signup'),
-    path('signup/postuser/', views.postuser, name='postuser'),
     path('feedback/', feedback, name='feedback'),
+    path('feedback/create/', views.create_feedback, name='create_feedback'),
+    path('feedback/<int:pk>/update/', views.update_feedback, name='update_feedback'),
+    path('feedback/<int:pk>/delete/', views.delete_feedback, name='delete_feedback'),
     path('bookinstance/', BookInstance.as_view(), name='bookinstance_list'),
     path('order/', order_list, name='order'),
     path('basket/', basket, name='basket'),
