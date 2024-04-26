@@ -22,12 +22,13 @@
                 <li><a href="{% url 'about' %}">Біз туралы</a></li>
                 <li><a href="{% url 'featured' %}">Таңдаулы кітаптар</a></li>
                 <li><a href="{% url 'arrivals' %}">Жаңа түсірілімдер</a></li>
-                <li id="genres-dropdown">
-                <a href="#">Тіркелу</a>
-                <ul id="genres-menu">
-                <li><a href="{% url 'signup' %}">Регистрация</a></li>
-                    <li><a href="{% url 'login' %}">Логин</a></li>
-            </ul>
+                <li id="registration-dropdown">
+                    <a href="#">Тіркелу</a>
+                    <ul id="registration-menu" style="display: none;">
+                        <li><a href="{% url 'signup' %}">Регистрация</a></li>
+                        <li><a href="{% url 'login' %}">Логин</a></li>
+                    </ul>
+                </li>
                 <li id="genres-dropdown">
                 <a href="#">Каталог</a>
                 <ul id="genres-menu">
@@ -38,10 +39,8 @@
                     <li><a href="{% url 'business' %}">Іскерлік кітаптар</a></li>
                     <li><a href="{% url 'graphic' %}">Графикалық әдебиет</a></li>
                     <li><a href="{% url 'internet' %}">Ғаламтор, компьютерлер</a></li>
-
                 </ul>
                 <li><a href="{% url 'order' %}">Тапсырыс</a></li>
-            </li>
             </ul>
 
             <div class="social_icon">
@@ -61,6 +60,19 @@
 
         genresDropdown.addEventListener('mouseleave', function() {
             genresMenu.style.display = 'none';
+        });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const registrationDropdown = document.getElementById('registration-dropdown');
+        const registrationMenu = document.getElementById('registration-menu');
+
+        registrationDropdown.addEventListener('mouseenter', function() {
+            registrationMenu.style.display = 'block';
+        });
+
+        registrationDropdown.addEventListener('mouseleave', function() {
+            registrationMenu.style.display = 'none';
         });
     });
 </script>

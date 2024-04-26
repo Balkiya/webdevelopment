@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {%block content%}
 <style>
-/* Стили для рамки формы */
 .login-form-container {
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -10,7 +9,6 @@
     margin: 0 auto;
 }
 
-/* Стили для кнопки */
 .btn {
     background-color: #007bff;
     color: #fff;
@@ -20,12 +18,10 @@
     border-radius: 5px;
 }
 
-/* Стили для кнопки при наведении */
 .btn:hover {
     background-color: #0056b3;
 }
 
-/* Стили для текстовых полей */
 .input-field {
     width: 100%;
     padding: 10px;
@@ -34,7 +30,6 @@
     border-radius: 5px;
 }
 
-/* Стили для кнопки в форме */
 .form-btn {
     width: 100%;
     background-color: #007bff;
@@ -45,7 +40,6 @@
     border-radius: 5px;
 }
 
-/* Стили для кнопки в форме при наведении */
 .form-btn:hover {
     background-color: #0056b3;
 }
@@ -55,7 +49,6 @@
 
 <div class="login-form-container">
     <h2>Вход</h2>
-    <!-- Форма входа -->
     <form method="post">
         {% csrf_token %}
         <input type="text" name="username" placeholder="Имя пользователя" class="input-field"><br>

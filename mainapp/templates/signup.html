@@ -2,22 +2,19 @@
 {% load static %}
 {% block content %}
 <style>
-/* Стили для рамки формы */
 .register-form-container {
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 40px;
-    width: 500px; /* Увеличиваем ширину формы */
+    width: 500px; 
     margin: 0 auto;
 }
 
-/* Стили для заголовка */
 .register-form-container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Стили для кнопки в форме */
 .form-btn {
     width: 100%;
     background-color: #007bff;
@@ -28,19 +25,17 @@
     border-radius: 5px;
 }
 
-/* Стили для кнопки в форме при наведении */
 .form-btn:hover {
     background-color: #0056b3;
 }
 </style>
 
 <div class="register-form-container">
-    <h2>Регистрация</h2>
-    <!-- Форма регистрации -->
+    <h2>Тіркелу</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }} <!-- Используем {{ form.as_p }} для отображения всех полей формы -->
-        <button type="submit" class="form-btn">Зарегистрироваться</button>
+        {{ form.as_p }} 
+        <button type="submit" class="form-btn">Тіркелу</button>
     </form>
 </div>
 {% endblock content %}

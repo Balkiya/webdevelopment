@@ -16,7 +16,7 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('homepage')  # Перенаправление после успешного входа
+                return redirect('homepage')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
@@ -27,7 +27,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('login')  # Перенаправление после успешной регистрации
+            return redirect('login')
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
